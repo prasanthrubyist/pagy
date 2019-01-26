@@ -174,7 +174,7 @@ For multi-language apps you need the dynamic translation provided by the [i18n e
 
 Single-language apps (i.e. only `fr` or only `en` or only ...) don't need to switch between languages, so they don't need the `i18n` extra/`I18n` gem (although you could choose to use it).
 
-By default, Pagy handles its own dictionary file directly, providing pluralization and interpolation (without dynamic translation) _5x faster_ and using _3.5x less memory_ than the standard `I18n` gem.
+By default, Pagy handles its own dictionary file directly, providing pluralization and interpolation (without dynamic translation) _12x faster_ and using _6x less memory_ than the standard `I18n` gem.
 
 If you are fine with the locales provided with pagy, you just need to load the dictionary file of your language by adding this line the initializer file. For example with `zh-cn`:
 
