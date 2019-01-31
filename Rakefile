@@ -1,7 +1,7 @@
 require "bundler/setup"
 require "bundler/gem_tasks"
 require "rake/testtask"
-require "rubocop/rake_task"
+require "rubocop/rake_task" if RUBY_VERSION >= '2.3' && ENV['TASK'] != 'test'
 
 # The extras that override the built-in methods need to be tested in isolation in order
 # to prevent them to change also the behavior and the result of the built-in tests.
@@ -39,8 +39,14 @@ end
 
 task :test => [:test_common, :test_extra_items, :test_extra_i18n, :test_extra_overflow, :test_extra_trim ]
 
-RuboCop::RakeTask.new(:rubocop) do |t|
-  t.options = `git ls-files -z`.split("\x0")     # limit rubocop to the files in the repo
+unless ENV['TASK'] == 'test'
+  RuboCop::RakeTask.new(:rubocop) do |t|
+    t.options = `git ls-files -z`.split("\x0")     # limit rubocop to the files in the repo
+  end
 end
 
-task :default => [:test, :rubocop]
+if RUBY_VERSION >= '2.3'
+  task :default => [:test, :rubocop]
+else
+  task :default => [:test]
+end
