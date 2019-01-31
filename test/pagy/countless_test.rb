@@ -1,7 +1,7 @@
 require_relative '../test_helper'
 require 'pagy/extras/countless'
 
-SingleCov.covered!
+SingleCov.covered! if RUBY_VERSION >= '2.0'
 
 describe Pagy::Countless do
 

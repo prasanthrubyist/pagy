@@ -1,7 +1,7 @@
 require_relative '../../test_helper'
 require 'pagy/extras/semantic'
 
-SingleCov.covered!(uncovered: 1)
+SingleCov.covered!(uncovered: 1) if RUBY_VERSION >= '2.0'
 
 describe Pagy::Frontend do
 

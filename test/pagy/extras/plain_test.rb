@@ -1,7 +1,7 @@
 require_relative '../../test_helper'
 require 'pagy/extras/plain'
 
-SingleCov.covered!(uncovered: 1) # undefined TRIM for compact helper, tested in trim_test
+SingleCov.covered!(uncovered: 1) if RUBY_VERSION >= '2.0' # undefined TRIM for compact helper, tested in trim_test
 
 describe Pagy::Frontend do
 

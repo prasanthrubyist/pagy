@@ -7,7 +7,7 @@ require 'pagy/extras/materialize'
 # require 'pagy/extras/semantic'
 require 'pagy/extras/trim'
 
-SingleCov.covered!
+SingleCov.covered! if RUBY_VERSION >= '2.0'
 
 describe Pagy::Frontend do
 

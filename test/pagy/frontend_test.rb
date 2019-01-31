@@ -1,6 +1,6 @@
 require_relative '../test_helper'
 
-SingleCov.covered!
+SingleCov.covered! if RUBY_VERSION >= '2.0'
 
 describe Pagy::Frontend do
 

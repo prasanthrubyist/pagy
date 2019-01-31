@@ -1,7 +1,9 @@
 require 'bundler/setup'
 
-require 'single_cov'
-SingleCov.setup :minitest
+if RUBY_VERSION >= '2.0'
+  require 'single_cov'
+  SingleCov.setup(:minitest, branches: false)
+end
 
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require 'pagy'

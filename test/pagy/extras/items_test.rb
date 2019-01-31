@@ -2,7 +2,7 @@ require_relative '../../test_helper'
 require 'pagy/extras/countless'
 require 'pagy/extras/items'
 
-SingleCov.covered!(uncovered: 1)
+SingleCov.covered! if RUBY_VERSION >= '2.0'
 
 describe Pagy::Backend do
 

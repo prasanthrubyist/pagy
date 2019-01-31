@@ -1,7 +1,7 @@
 require_relative '../../test_helper'
 require 'pagy/extras/overflow'
 
-SingleCov.covered!(uncovered: 1)   # the condition for countless
+SingleCov.covered! if RUBY_VERSION >= '2.0'
 
 describe Pagy do
 
